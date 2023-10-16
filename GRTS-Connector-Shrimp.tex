@@ -107,11 +107,12 @@ HUCmetaData <- function (DataRequestRaw) {
   HUCdataBlob <- rawToChar(HUCdataBlobRaw)
   HUCdataBlob %>% spread_all -> HUCmetaDataBall
   
-  document.id <- HUCmetaDataBall$document.id # document id (integer).
-  count <- HUCmetaDataBall$count  # How many projects are in this HUC
+  document.id <- HUCmetaDataBall$document.id 
+  count <- HUCmetaDataBall$count  
   # The Payload is in 'HUCmetaDataBall$..JSON'. 
   ## Extract elsewhere.
   HUCMetaData <- data.frame (document.id,count) 
+
   return (HUCMetaData) 
  }
 
@@ -119,18 +120,27 @@ HUCmetaData <- function (DataRequestRaw) {
 \end{frame}
 
 \begin{frame}{Basic Analysis}
-  \begin{itemize}
-    \item After the GRTS data is tamed, we can start answering the
-      basic questions
-  \end{itemize}
+  After the GRTS data is tamed, we can start answering the basic
+  questions
+ 
 \end{frame}
 \begin{frame}{Question One}
   What's the mean and 'data spread' of GRTS
   funding in New England?
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.50\textwidth]{funds_319.png}
+    \caption{USD (\$) for CWA 319 Stormwater BMP Funding in New England}
+  \end{figure}
 \end{frame}
 
 \begin{frame}{Question Two}
   What does the data look like when grouped by appropriation years?
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.50\textwidth]{fundsByAppropYear.png}
+    \caption{CWA 319 Stormwater Funding by Federal Fiscal Year in New England}
+  \end{figure}
 \end{frame}
 	 
 \section{Wrap-up}
@@ -149,10 +159,8 @@ HUCmetaData <- function (DataRequestRaw) {
 
 
 \begin{frame}{Questions?}
-  \begin{itemize}
-  \item Erik Beck, Region One
-  \item 1.xxx.xx8.1606
-  \end{itemize}
+  \centering
+  I can take a few questions.
 \end{frame}
  
 \end{document}
